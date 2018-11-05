@@ -3,14 +3,14 @@ resources:
     type: gitRepo
     integration: integration_github
     pointer:
-      sourceName: "devops-recipes/build_custom_ci_image"  #org name/repository name
+      sourceName: "dweindl/custom_ci_image"
       branch: master
 
   - name: build_custom_ci_img_dh
     type: image
-    integration: drship_dockerhub # replace with your integration name
+    integration: itegration_docker_hub
     versionTemplate:
-      sourceName: "devopsrecipes/build_custom_ci" # replace with your Hub URL
+      sourceName: "dweindl/parpeci"
       versionName: latest
 
 jobs:
