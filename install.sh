@@ -2,6 +2,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
+apt-get install -y apt-utils
+
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
 apt-get install -q locales
@@ -51,7 +53,6 @@ apt-get install -q -y \
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
   python-pip \
-  python-software-properties \
   python-dev
 
 echo "================= Installing Git ==================="
