@@ -93,6 +93,10 @@ apt-get install -q -y git
 #echo "================= Adding awscli 1.14.64 ============"
 #sudo pip install -q 'awscli==1.14.64'
 
+apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6 
+
+
+
 echo "================= Intalling Shippable CLIs ================="
 
 git clone https://github.com/Shippable/node.git nodeRepo
