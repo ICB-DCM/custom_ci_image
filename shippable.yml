@@ -1,14 +1,14 @@
 resources:
   - name: build_custom_ci_repo
     type: gitRepo
-    integration: github
+    integration: integration_github
     pointer:
       sourceName: "dweindl/custom_ci_image"
       branch: master
 
   - name: build_custom_ci_img_dh
     type: image
-    integration: itegration_docker_hub
+    integration: integration_docker_hub
     versionTemplate:
       sourceName: "dweindl/parpeci"
       versionName: latest
