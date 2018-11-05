@@ -41,4 +41,4 @@ jobs:
     flags:
       # Use flags to filter SPOG views
       - custom_ci_img
-- war
+      - war
