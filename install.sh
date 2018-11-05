@@ -40,7 +40,7 @@ apt-get install -q -y \
   sudo  \
   texinfo \
   zip \
-  unzip1 \
+  unzip \
   wget \
   rsync \
   psmisc \
