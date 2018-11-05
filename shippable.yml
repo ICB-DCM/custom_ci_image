@@ -1,7 +1,7 @@
 resources:
   - name: build_custom_ci_repo
     type: gitRepo
-    integration: integration_github
+    integration: github
     pointer:
       sourceName: "dweindl/custom_ci_image"
       branch: master
