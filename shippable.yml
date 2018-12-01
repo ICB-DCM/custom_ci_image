@@ -39,12 +39,10 @@ jobs:
             - sudo docker login -u $DH_USR_NAME -p $DH_PASS
             - sudo docker push $IMG_NAME:$BUILD_NUMBER
             - popd
+            - echo "Update OUT resource to create a new version '$BUILD_NUMBER' that will trigger rest of the workflow"
+            - shipctl put_resource_state_multi parpe_dockerhub_ci_image "versionName=$BUILD_NUMBER"
       # Output resource: CI Image
       - OUT: parpe_dockerhub_ci_image
-    on_success:
-      script:
-        - echo "Update OUT resource to create a new version '$BUILD_NUMBER' that will trigger rest of the workflow"
-        - shipctl put_resource_state_multi parpe_dockerhub_ci_image "versionName=$BUILD_NUMBER"
     flags:
       # Use flags to filter SPOG views
       - custom_ci_img
