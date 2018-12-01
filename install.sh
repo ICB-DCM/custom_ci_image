@@ -31,6 +31,7 @@ apt-get install -q \
   build-essential \
   curl \
   gcc \
+  clang \
   gettext \
   libxml2-dev \
   libxslt1-dev \
