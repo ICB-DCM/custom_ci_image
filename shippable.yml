@@ -43,7 +43,7 @@ jobs:
       - OUT: parpe_dockerhub_ci_image
     on_success:
       script:
-        # Update OUT resource to create a new version that will trigger rest of the workflow
+        - echo "Update OUT resource to create a new version '$BUILD_NUMBER' that will trigger rest of the workflow"
         - shipctl put_resource_state_multi parpe_dockerhub_ci_image "versionName=$BUILD_NUMBER"
     flags:
       # Use flags to filter SPOG views
