@@ -27,7 +27,7 @@ jobs:
       - TASK:
           name: parpe_build_custom_image_task
           script:
-            - pushd $(shipctl get_resource_state "parpe_ci_image_repo")
+            - pushd $(shipctl get_resource_state "parpe_ci_image_recipe_repo")
             # Extract image information and Docker registry credentials from resources using shipctl utility
             # Detailed shipctl guide is at http://docs.shippable.com/platform/tutorial/workflow/using-shipctl/
             - export IMG_NAME=$(shipctl get_resource_version_key parpe_dockerhub_ci_image "sourceName")
