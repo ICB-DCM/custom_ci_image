@@ -1,11 +1,15 @@
+# Build custom CI image: http://docs.shippable.com/ci/tutorial/build-custom-ci-image/
+
 resources:
+  # Repository with recipe for CI image creation
   - name: build_custom_ci_repo
     type: gitRepo
     integration: integration_github
     pointer:
-      sourceName: "dweindl/custom_ci_image"
+      sourceName: "ICB-DCM/custom_ci_image"
       branch: master
 
+  # CI image on dockerhub
   - name: build_custom_ci_img_dh
     type: image
     integration: integration_docker_hub
@@ -14,9 +18,11 @@ resources:
       versionName: latest
 
 jobs:
+  # How to build our custom CI image
   - name: build_custom_img
     type: runSh
     steps:
+      # Input resource: CI image recipe
       - IN: build_custom_ci_repo
       - TASK:
           name: build_custom_image
@@ -33,6 +39,7 @@ jobs:
             - sudo docker login -u $DH_USR_NAME -p $DH_PASS
             - sudo docker push $IMG_NAME:$BUILD_NUMBER
             - popd
+      # Output resource: CI Image
       - OUT: build_custom_ci_img_dh
     on_success:
       script:
