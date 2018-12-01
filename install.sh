@@ -27,7 +27,7 @@ touch "$HOME/.ssh/known_hosts"
 mkdir -p /etc/drydock
 
 echo "================= Installing basic packages ==================="
-apt-get install -q -y \
+apt-get install -q \
   build-essential \
   curl \
   gcc \
