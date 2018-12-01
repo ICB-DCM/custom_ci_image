@@ -44,7 +44,7 @@ jobs:
     on_success:
       script:
         # Update OUT resource to create a new version that will trigger rest of the workflow
-        - shipctl put_resource_state_multi build_custom_ci_img "versionName=$BUILD_NUMBER"
+        - shipctl put_resource_state_multi build_custom_ci_img_dh "versionName=$BUILD_NUMBER"
     flags:
       # Use flags to filter SPOG views
       - custom_ci_img
