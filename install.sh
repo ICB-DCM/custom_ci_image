@@ -98,7 +98,8 @@ apt-get install -q -y git
 
 # Install parPE requirements
 apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6
-
+# for setuptools to find:
+ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 
 echo "================= Intalling Shippable CLIs ================="
