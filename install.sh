@@ -54,7 +54,9 @@ apt-get install -q \
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
   python-pip \
-  python-dev
+  python-dev \
+  python3-pip \
+  python3-dev
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
