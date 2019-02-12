@@ -100,7 +100,8 @@ apt-get install -q -y git
 apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6 python3-venv
 # for setuptools to find:
 ln -s /usr/bin/swig3.0 /usr/bin/swig
-
+python3 -m pip install --upgrade pip
+pip3 install -U setuptools pkgconfig wheel
 
 echo "================= Intalling Shippable CLIs ================="
 
