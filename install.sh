@@ -96,8 +96,8 @@ apt-get install -q -y git
 #echo "================= Adding awscli 1.14.64 ============"
 #sudo pip install -q 'awscli==1.14.64'
 
-# Install parPE requirements
-apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6 python3-venv
+#echo "================= parPE requirements ============"
+apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6 python3-venv hdf5-tools
 # for setuptools to find:
 ln -s /usr/bin/swig3.0 /usr/bin/swig
 python3 -m pip install --upgrade pip
