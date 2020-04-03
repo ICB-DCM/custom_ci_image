@@ -96,7 +96,19 @@ apt-get install -q -y git
 #echo "================= Adding awscli 1.14.64 ============"
 #sudo pip install -q 'awscli==1.14.64'
 
-#echo "================= parPE requirements ============"
+echo "================= sonarcloud requirements ============"
+export SONAR_SCANNER_VERSION=4.2.0.1873
+export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
+curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
+unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+export PATH=$SONAR_SCANNER_HOME/bin:$PATH
+export SONAR_SCANNER_OPTS="-server"
+
+curl --create-dirs -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
+export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
+
+echo "================= parPE requirements ============"
 apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig3.0 python3.6 python3-venv hdf5-tools
 # for setuptools to find:
 ln -s /usr/bin/swig3.0 /usr/bin/swig
