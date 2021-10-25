@@ -119,7 +119,6 @@ apt-get install \
   cmake \
   libceres-dev \
   coinor-libipopt-dev \
-  libcpputest-dev \
   gcovr \
   valgrind \
   swig \
