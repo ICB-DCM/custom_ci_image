@@ -98,22 +98,39 @@ echo "================= sonarcloud requirements ============"
 apt install nodejs
 export SONAR_SCANNER_VERSION=4.6.1.2450
 export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
-curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
+curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip \
+  https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip
 unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
 export PATH=$SONAR_SCANNER_HOME/bin:$PATH
 export SONAR_SCANNER_OPTS="-server"
 
-curl --create-dirs -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+curl --create-dirs -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip \
+  https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
 unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
 export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
 
 echo "================= parPE requirements ============"
-apt-get install gfortran libmpich-dev libatlas-base-dev libboost-all-dev libhdf5-dev cmake libceres-dev coinor-libipopt-dev libcpputest-dev gcovr valgrind swig python3 python3-venv hdf5-tools
+apt-get install \
+  gfortran \
+  libmpich-dev \
+  libatlas-base-dev \
+  libboost-all-dev \
+  libhdf5-dev \
+  cmake \
+  libceres-dev \
+  coinor-libipopt-dev \
+  libcpputest-dev \
+  gcovr \
+  valgrind \
+  swig \
+  python3 \
+  python3-venv \
+  hdf5-tools
 # for setuptools to find:
 python3 -m pip install --upgrade pip
 pip3 install -U setuptools pkgconfig wheel
 
-echo "================= Intalling Shippable CLIs ================="
+echo "================= Installing Shippable CLIs ================="
 
 git clone https://github.com/Shippable/node.git nodeRepo
 ./nodeRepo/shipctl/x86_64/Ubuntu_16.04/install.sh
