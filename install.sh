@@ -130,15 +130,6 @@ apt-get install \
 python3 -m pip install --upgrade pip
 pip3 install -U setuptools pkgconfig wheel
 
-echo "================= Installing Shippable CLIs ================="
-
-git clone https://github.com/Shippable/node.git nodeRepo
-./nodeRepo/shipctl/x86_64/Ubuntu_16.04/install.sh
-rm -rf nodeRepo
-
-echo "Installed Shippable CLIs successfully"
-echo "-------------------------------------"
-
 echo "================= Cleaning package lists ==================="
 apt-get clean
 apt-get autoclean
