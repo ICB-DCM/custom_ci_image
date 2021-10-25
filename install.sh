@@ -60,39 +60,6 @@ add-apt-repository ppa:git-core/ppa -y
 apt-get update
 apt-get install -q -y git
 
-
-#echo "================= Adding JQ 1.5.1 ==================="
-#apt-get install -q jq
-
-
-#echo "================ Adding ansible 2.4.3.0 ===================="
-#sudo pip install -q 'ansible==2.4.3.0'
-
-#echo "================ Adding boto 2.48.0 ======================="
-#sudo pip install -q 'boto==2.48.0'
-
-#echo "================ Adding boto3 ======================="
-#sudo pip install -q 'boto3==1.6.16'
-
-#export PK_VERSION=1.2.2
-#echo "================ Adding packer $PK_VERSION  ===================="
-#export PK_FILE=packer_"$PK_VERSION"_linux_amd64.zip
-
-#echo "Fetching packer"
-#echo "-----------------------------------"
-#rm -rf /tmp/packer
-#mkdir -p /tmp/packer
-#wget -nv https://releases.hashicorp.com/packer/$PK_VERSION/$PK_FILE
-#unzip -o $PK_FILE -d /tmp/packer
-#sudo chmod +x /tmp/packer/packer
-#mv /tmp/packer/packer /usr/bin/packer
-
-#echo "Added packer successfully"
-#echo "-----------------------------------"
-
-#echo "================= Adding awscli 1.14.64 ============"
-#sudo pip install -q 'awscli==1.14.64'
-
 echo "================= sonarcloud requirements ============"
 
 apt install nodejs
