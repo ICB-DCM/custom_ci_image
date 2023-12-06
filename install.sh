@@ -90,6 +90,7 @@ apt-get install \
   valgrind \
   swig \
   python3 \
+  python3-numpy \
   python3-venv \
   hdf5-tools
 # for setuptools to find:
