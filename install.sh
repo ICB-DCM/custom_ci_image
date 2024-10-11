@@ -88,14 +88,11 @@ apt-get install \
   coinor-libipopt-dev \
   gcovr \
   valgrind \
-  swig4.0 \
+  swig \
   python3 \
   python3-numpy \
   python3-venv \
   hdf5-tools
-# for setuptools to find:
-python3 -m pip install --upgrade pip
-pip3 install -U setuptools pkgconfig wheel
 
 echo "================= Cleaning package lists ==================="
 apt-get clean
