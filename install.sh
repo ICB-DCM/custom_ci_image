@@ -79,7 +79,6 @@ export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
 echo "================= parPE requirements ============"
 apt-get install \
   gfortran \
-  libmpich-dev \
   libatlas-base-dev \
   libboost-all-dev \
   libhdf5-dev \
